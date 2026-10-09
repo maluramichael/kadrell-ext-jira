@@ -3,9 +3,8 @@
 
 local jira = require("jira")
 
--- locale wird von apiVersion 1 nicht an die Extension durchgereicht; Englisch als Default.
--- shortcut: feste Sprache en, auf locale umstellen, sobald die Runtime es der Extension gibt.
-local lang = "en"
+-- Sprache aus der Kadrell-Einstellung (de/en), Englisch als Rückfall.
+local lang = (kadrell.locale or "en"):sub(1, 2)
 local T = {
   en = { browser = "Open in browser", folder = "Open in project folder", reload = "Reload",
          remove = "Remove instance", notLoggedIn = "Not logged in", noFolder = "No folder mapped for ",
