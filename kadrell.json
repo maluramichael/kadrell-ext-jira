@@ -1,0 +1,14 @@
+{
+  "name": "jira",
+  "version": "0.1.0",
+  "description": "Jira Cloud tickets in the right sidebar; open in browser or in the project folder.",
+  "apiVersion": 1,
+  "permissions": ["exec", "http", "control"],
+  "settings": [
+    { "key": "baseUrl", "type": "string", "label": "Jira URL (e.g. https://acme.atlassian.net)" },
+    { "key": "email",   "type": "string", "label": "Account email" },
+    { "key": "token",   "type": "secret", "label": "API token (from id.atlassian.com)" },
+    { "key": "jql",     "type": "string", "label": "JQL", "default": "assignee = currentUser() AND resolution = Unresolved ORDER BY updated DESC" },
+    { "key": "folders", "type": "string", "label": "Project folders, one per line: PROJ=/path" }
+  ]
+}
